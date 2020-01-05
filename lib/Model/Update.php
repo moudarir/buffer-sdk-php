@@ -72,6 +72,14 @@ class Update
     public $scheduled_at = null;
 
     /**
+     * (Twitter only) This parameter can be used to create a 'retweet' update.
+     * It will be silently ignored for any other profiles
+     *
+     * @var array
+     */
+    public $retweet = [];
+
+    /**
      * Add a social profile to be updated.
      *
      * @param string $id
@@ -93,7 +101,7 @@ class Update
      */
     public function addMedia($key, $value): self
     {
-        $available = array('link', 'description', 'picture', 'photo');
+        $available = array('link', 'description', 'title', 'picture', 'photo', 'thumbnail');
 
         // accept only valid types for media
         if (!in_array($key, $available)) {

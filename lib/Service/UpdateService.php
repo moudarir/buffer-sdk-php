@@ -139,6 +139,9 @@ class UpdateService
         if (!is_null($update->scheduled_at)) {
             $payload['scheduled_at'] = $update->scheduled_at;
         }
+        if (!empty($update->retweet)) {
+            $payload['retweet'] = $update->retweet;
+        }
 
         return $this->client->createHttpRequest(
             'POST',
@@ -168,6 +171,9 @@ class UpdateService
         }
         if (!is_null($update->scheduled_at)) {
             $payload['scheduled_at'] = $update->scheduled_at;
+        }
+        if (!empty($update->retweet)) {
+            $payload['retweet'] = $update->retweet;
         }
 
         return $this->client->createHttpRequest(
