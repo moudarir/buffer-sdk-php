@@ -13,7 +13,7 @@ class UpdateService
     /**
      * UpdateService constructor.
      *
-     * @param $client
+     * @param ClientInterface $client
      */
     public function __construct(ClientInterface $client)
     {
@@ -86,8 +86,8 @@ class UpdateService
                 'body' => [
                     'order' => $order,
                     'offset' => $offset,
-                    'utc' => $utc,
-                ],
+                    'utc' => $utc
+                ]
             ]
         );
     }
@@ -110,8 +110,8 @@ class UpdateService
             [
                 'body' => [
                     'count' => $count,
-                    'utc' => $utc,
-                ],
+                    'utc' => $utc
+                ]
             ]
         );
     }
@@ -130,7 +130,7 @@ class UpdateService
             'profile_ids' => $update->profiles,
             'shorten' => $update->shorten,
             'now' => $update->now,
-            'top' => $update->top,
+            'top' => $update->top
         );
 
         if (!empty($update->media)) {
@@ -147,7 +147,7 @@ class UpdateService
             'POST',
             'updates/create.json',
             [
-                'body' => $payload,
+                'body' => $payload
             ]
         );
     }
@@ -163,7 +163,7 @@ class UpdateService
 
         $payload = array(
             'text' => $update->text,
-            'now' => $update->now,
+            'now' => $update->now
         );
 
         if (!empty($update->media)) {
@@ -180,7 +180,7 @@ class UpdateService
             'POST',
             'updates/'.$update->id.'/update.json',
             [
-                'body' => $payload,
+                'body' => $payload
             ]
         );
     }

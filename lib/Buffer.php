@@ -53,7 +53,7 @@ class Buffer
     /**
      * Buffer Client Constructor.
      *
-     * @param $auth
+     * @param AuthorizationTokenInterface $auth
      */
     public function __construct(AuthorizationTokenInterface $auth)
     {
